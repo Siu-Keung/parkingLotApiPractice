@@ -4,6 +4,7 @@ import com.oocl.parkingLotApiPractice.entity.Order;
 import com.oocl.parkingLotApiPractice.entity.Receipt;
 import com.oocl.parkingLotApiPractice.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author Dylan Wei
  * @date 2018-07-25 19:50
  */
+@Service
 public class ParkingServiceImpl implements ParkingService {
     private List<Order> allOrders;
 
