@@ -14,6 +14,8 @@ public interface ParkingLotService {
 
     ParkingLot updateParkingLot(ParkingLot newParkingLot);
 
+    List<ParkingLot> getAllParkingLots();
+
     List<ParkingLot> getParkingLotsByParkingBoyId(Integer parkingBoyId);
 
 }

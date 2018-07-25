@@ -49,4 +49,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
                 .filter(item -> item.getParkingBoyId().equals(parkingBoyId))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<ParkingLot> getAllParkingLots() {
+        return this.allParkingLots;
+    }
 }
