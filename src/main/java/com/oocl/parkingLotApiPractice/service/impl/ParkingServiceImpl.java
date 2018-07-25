@@ -1,6 +1,7 @@
 package com.oocl.parkingLotApiPractice.service.impl;
 
 import com.oocl.parkingLotApiPractice.entity.Order;
+import com.oocl.parkingLotApiPractice.entity.Receipt;
 import com.oocl.parkingLotApiPractice.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,5 +19,9 @@ public class ParkingServiceImpl implements ParkingService {
         this.allOrders = allOrders;
     }
 
-
+    @Override
+    public Receipt createReceipt(String carNo) {
+        Receipt receipt = new Receipt(carNo);
+        return receipt;
+    }
 }
