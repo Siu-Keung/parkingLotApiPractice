@@ -15,14 +15,13 @@ import java.util.List;
  * @date 2018-07-25 14:47
  */
 @RestController
-@RequestMapping("/parkingBoys")
 public class ParkingBoyController {
     @Autowired
     private ParkingBoyService parkingBoyService;
     @Autowired
     private ParkingLotManagementService parkingLotService;
 
-    @PostMapping
+    @PostMapping("/parkingBoys")
     public String addParkingBoy(ParkingBoy parkingBoy){
         if(this.parkingBoyService.addParkingBoy(parkingBoy))
             return "succeeded";
@@ -30,9 +29,14 @@ public class ParkingBoyController {
             return "failed";
     }
 
-    @PatchMapping("/{parkingBoyId}/parkingLots")
-    public String addParkingLotForParkingBoy(
-            @PathVariable Integer parkingBoyId, Integer parkingLotId){
+    @GetMapping("/parkingBoys")
+    public List<ParkingBoyModel> getAllParkingBoyModels(){
+        return this.parkingBoyService.getAllParkingBoyModels();
+    }
+
+    @PatchMapping("/parkingBoys/{parkingBoyId}/parkingLots/{parkingLotId}")
+    public String distributeParkingLotToParkingBoy(
+            @PathVariable Integer parkingBoyId, @PathVariable Integer parkingLotId){
         ParkingLot parkingLot = new ParkingLot(parkingLotId);
         parkingLot.setParkingBoyId(parkingBoyId);
         if(this.parkingLotService.updateParkingLot(parkingLot) != null)
@@ -41,10 +45,9 @@ public class ParkingBoyController {
             return "failed";
     }
 
-    @GetMapping
-    public List<ParkingBoyModel> getAllParkingBoyModels(){
-        return this.parkingBoyService.getAllParkingBoyModels();
+    @GetMapping("/parkingBoys/{parkingBoyId}/parkingLots")
+    public List<ParkingLot> getParkingLotsByParkingBoy(@PathVariable Integer parkingBoyId){
+        return this.parkingLotService.getParkingLotsByParkingBoyId(parkingBoyId);
     }
-
 
 }

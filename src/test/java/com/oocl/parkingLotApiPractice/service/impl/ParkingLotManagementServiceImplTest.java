@@ -59,4 +59,6 @@ class ParkingLotManagementServiceImplTest {
 
         assertThat(resultParkingLot.getParkingBoyId(), is(2));
     }
+
+
 }

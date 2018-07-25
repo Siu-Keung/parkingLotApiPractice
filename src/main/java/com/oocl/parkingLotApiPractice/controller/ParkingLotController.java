@@ -42,6 +42,16 @@ public class ParkingLotController {
         return  this.parkingLotService.getParkingLotById(parkingLotId);
     }
 
+    @PatchMapping("/parkingLots/{parkingLotId}")
+    public String setParkingLotInventory(
+            @PathVariable Integer parkingLotId, Integer newInventory
+    ){
+        if(this.parkingLotService.setInventory(parkingLotId, newInventory))
+            return "succeeded";
+        else
+            return "failed";
+    }
+
 
 
 

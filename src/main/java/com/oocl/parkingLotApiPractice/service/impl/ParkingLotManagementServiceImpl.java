@@ -47,7 +47,7 @@ public class ParkingLotManagementServiceImpl implements ParkingLotManagementServ
     @Override
     public List<ParkingLot> getParkingLotsByParkingBoyId(Integer parkingBoyId) {
         return this.allParkingLots.stream()
-                .filter(item -> item.getParkingBoyId().equals(parkingBoyId))
+                .filter(item -> parkingBoyId.equals(item.getParkingBoyId()))
                 .collect(Collectors.toList());
     }
 
@@ -74,5 +74,19 @@ public class ParkingLotManagementServiceImpl implements ParkingLotManagementServ
     @Override
     public List<ParkingLot> getAllParkingLots() {
         return this.allParkingLots;
+    }
+
+    @Override
+    public Boolean setInventory(Integer parkingLotId, Integer newInventory) {
+        Optional<ParkingLot> optional = this.allParkingLots.stream()
+                .filter(item -> item.getId().equals(parkingLotId))
+                .findFirst();
+        if(!optional.isPresent())
+            return false;
+        ParkingLot parkingLot = optional.get();
+        if(newInventory > parkingLot.getTotalNum())
+            return false;
+        parkingLot.setAvailableNum(newInventory);
+        return true;
     }
 }

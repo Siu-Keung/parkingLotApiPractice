@@ -22,4 +22,6 @@ public interface ParkingLotManagementService {
 
     List<ParkingLot> getParkingLotsByParkingBoyId(Integer parkingBoyId);
 
+    Boolean setInventory(Integer parkingLotId, Integer newInventory);
+
 }
