@@ -1,0 +1,708 @@
+{
+	"info": {
+		"_postman_id": "303fb6eb-83f4-4560-a69d-ff5a449fcd25",
+		"name": "parking-lot-api-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "33a9e379-b8b5-4273-bf6a-870c3f5bd219",
+			"name": "127.0.0.1:8080/parkingBoys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c77fbb6-0a2c-44f4-80f9-eb2a6c1c15b2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"        pm.expect(pm.response.json()).to.eql(",
+							"            ",
+							"      [",
+							"    {",
+							"        \"id\": 1,",
+							"        \"parkingLots\": [",
+							"            {",
+							"                \"id\": 1,",
+							"                \"totalNum\": 10,",
+							"                \"availableNum\": 8,",
+							"                \"parkingBoyId\": 1",
+							"            },",
+							"            {",
+							"                \"id\": 2,",
+							"                \"totalNum\": 100,",
+							"                \"availableNum\": 18,",
+							"                \"parkingBoyId\": 1",
+							"            }",
+							"        ]",
+							"    },",
+							"    {",
+							"        \"id\": 2,",
+							"        \"parkingLots\": [",
+							"            {",
+							"                \"id\": 3,",
+							"                \"totalNum\": 40,",
+							"                \"availableNum\": 38,",
+							"                \"parkingBoyId\": 2",
+							"            },",
+							"            {",
+							"                \"id\": 4,",
+							"                \"totalNum\": 50,",
+							"                \"availableNum\": 23,",
+							"                \"parkingBoyId\": 2",
+							"            },",
+							"            {",
+							"                \"id\": 5,",
+							"                \"totalNum\": 20,",
+							"                \"availableNum\": 20,",
+							"                \"parkingBoyId\": 2",
+							"            }",
+							"        ]",
+							"    }",
+							"]",
+							"            ",
+							"            );",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingBoys",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "dae8f6a1-be40-44bf-bd4c-70e7661a60bc",
+			"name": "127.0.0.1:8080/parkingBoys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eedd4c4b-0707-4d77-b885-ab44d4b71eeb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"        pm.expect(pm.response.text()).to.eql(\"failed\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"sessionValue": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingBoys",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b58e06a4-daa4-4949-a2cd-588d09a1d2c5",
+			"name": "127.0.0.1:8080/parkingLots",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0d32ccc-c1a0-45f0-8594-d6cc646da70f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"\", () => {",
+							"",
+							"pm.expect(pm.response.json()).to.eql([",
+							"    {",
+							"        \"id\": 1,",
+							"        \"totalNum\": 10,",
+							"        \"availableNum\": 8,",
+							"        \"parkingBoyId\": 1",
+							"    },",
+							"    {",
+							"        \"id\": 2,",
+							"        \"totalNum\": 100,",
+							"        \"availableNum\": 18,",
+							"        \"parkingBoyId\": 1",
+							"    },",
+							"    {",
+							"        \"id\": 3,",
+							"        \"totalNum\": 40,",
+							"        \"availableNum\": 38,",
+							"        \"parkingBoyId\": 2",
+							"    },",
+							"    {",
+							"        \"id\": 4,",
+							"        \"totalNum\": 50,",
+							"        \"availableNum\": 23,",
+							"        \"parkingBoyId\": 2",
+							"    },",
+							"    {",
+							"        \"id\": 5,",
+							"        \"totalNum\": 20,",
+							"        \"availableNum\": 20,",
+							"        \"parkingBoyId\": 2",
+							"    }",
+							"])",
+							"",
+							"",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingLots",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "180527dd-53b0-429d-9f5f-7f9920cdad83",
+			"name": "127.0.0.1:8080/parkingBoys/1/parkingLots/3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8cabc56-89ce-44e4-b789-c1275c7aab13",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"        pm.expect(pm.response.text()).to.eql(\"succeeded\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingBoys/1/parkingLots/3",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys",
+						"1",
+						"parkingLots",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "af946232-0ac6-4bf4-9606-62fbd7b9ccab",
+			"name": "127.0.0.1:8080/orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f535f854-89e0-451b-a6f8-9754f097e868",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"应当返回所有未完成订单\", () => {",
+							"    pm.expect(pm.response.json()).to.eql(",
+							"        ",
+							"  [",
+							"    {",
+							"        \"id\": \"1\",",
+							"        \"receiptNo\": \"1\",",
+							"        \"carNo\": \"粤c952\",",
+							"        \"parkingBoyId\": null,",
+							"        \"parkingLotId\": null,",
+							"        \"finished\": false",
+							"    },",
+							"    {",
+							"        \"id\": \"2\",",
+							"        \"receiptNo\": \"2\",",
+							"        \"carNo\": \"粤c222\",",
+							"        \"parkingBoyId\": null,",
+							"        \"parkingLotId\": null,",
+							"        \"finished\": false",
+							"    },",
+							"    {",
+							"        \"id\": \"3\",",
+							"        \"receiptNo\": \"3\",",
+							"        \"carNo\": \"粤c153\",",
+							"        \"parkingBoyId\": null,",
+							"        \"parkingLotId\": null,",
+							"        \"finished\": false",
+							"    }",
+							"]",
+							"        ",
+							"        );",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/orders?isFinished=false",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					],
+					"query": [
+						{
+							"key": "isFinished",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "fec97ffb-cfee-4002-a303-aad73f636c87",
+			"name": "127.0.0.1:8080/orders/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f83354d9-be7c-4e19-b3cb-f6575a909e37",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"应当输出成功\", () => {",
+							"    pm.expect(pm.response.text()).to.eql(\"succeeded\");",
+							"})"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "parkingBoyId",
+							"value": "1",
+							"sessionValue": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/orders/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "aede288e-985f-4ab7-a384-82a22949451e",
+			"name": "127.0.0.1:8080/receipts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "580140a9-3bd1-412f-a6fc-cfc95f8efe87",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"fad\", () => {",
+							"    pm.expect(pm.response.json().carNo).to.eq('123456');",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "carNo",
+							"value": "123456",
+							"sessionValue": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/receipts",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"receipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e2547650-004b-46aa-a916-43ffab54db35",
+			"name": "127.0.0.1:8080/parkingLots/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3611bda1-7433-48e4-a382-665d2038d137",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"\", () => {",
+							"",
+							"pm.expect(pm.response.json()).to.eql({",
+							"    \"id\": 2,",
+							"    \"totalNum\": 100,",
+							"    \"availableNum\": 18,",
+							"    \"parkingBoyId\": 1",
+							"})",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingLots/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b0fd5071-ca7d-4cb7-a4a1-9a296e995b0f",
+			"name": "127.0.0.1:8080/parkingLots/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b2961d58-c895-4e72-bf8f-d16e93b30a55",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"\", () => {",
+							"",
+							"pm.expect(pm.response.text()).to.eql(\"succeeded\")",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingLots/5",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9279a048-7c20-4d54-8d06-d7d338e7c143",
+			"name": "127.0.0.1:8080/parkingLots",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "339eff2d-2627-4e35-8e0b-cf2251f4ef06",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"\", () => {",
+							"",
+							"pm.expect(pm.response.text()).to.eql(\"succeeded\")",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "66",
+							"sessionValue": "66",
+							"type": "text"
+						},
+						{
+							"key": "totalNum",
+							"value": "20",
+							"sessionValue": "20",
+							"type": "text"
+						},
+						{
+							"key": "availableNum",
+							"value": "20",
+							"sessionValue": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingLots",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "36ed4e51-7ddb-429f-8854-180404071671",
+			"name": "127.0.0.1:8080/parkingBoys/1/parkingLots",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fb170aee-90be-4f62-9fd7-3389b960eb40",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"\", () => {",
+							"",
+							"pm.expect(pm.response.json()).to.eql([",
+							"    {",
+							"        \"id\": 1,",
+							"        \"totalNum\": 10,",
+							"        \"availableNum\": 8,",
+							"        \"parkingBoyId\": 1",
+							"    },",
+							"    {",
+							"        \"id\": 2,",
+							"        \"totalNum\": 100,",
+							"        \"availableNum\": 18,",
+							"        \"parkingBoyId\": 1",
+							"    },",
+							"    {",
+							"        \"id\": 3,",
+							"        \"totalNum\": 40,",
+							"        \"availableNum\": 38,",
+							"        \"parkingBoyId\": 1",
+							"    }",
+							"])",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingBoys/1/parkingLots",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingBoys",
+						"1",
+						"parkingLots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a83822ad-2947-41e0-ae91-4ec872f3f88c",
+			"name": "127.0.0.1:8080/parkingLots/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b50faa73-f1a8-4b90-a03b-c532c82287c5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"\", () => {",
+							"",
+							"pm.expect(pm.response.text()).to.eql(\"succeeded\")",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "newInventory",
+							"value": "15",
+							"sessionValue": "15",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/parkingLots/4",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"parkingLots",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
