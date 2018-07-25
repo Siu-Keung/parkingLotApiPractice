@@ -1,5 +1,6 @@
 package com.oocl.parkingLotApiPractice;
 
+import com.oocl.parkingLotApiPractice.entity.Order;
 import com.oocl.parkingLotApiPractice.entity.ParkingBoy;
 import com.oocl.parkingLotApiPractice.entity.ParkingLot;
 import org.springframework.boot.SpringApplication;
@@ -34,6 +35,12 @@ public class ParkingLotApiPracticeApplication {
 	    allParkingLots.add(new ParkingLot(4, 50, 23, 2));
 	    allParkingLots.add(new ParkingLot(5, 20, 8, 2));
 	    return allParkingLots;
+    }
+
+    @Bean
+    public List<Order> allOrders(){
+	    List<Order> allOrders = new ArrayList<>();
+	    return allOrders;
     }
 
 }

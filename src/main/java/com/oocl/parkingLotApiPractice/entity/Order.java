@@ -18,6 +18,24 @@ public class Order {
         this.carNo = carNo;
     }
 
+    public Order(String id, Receipt receipt){
+        this.id = id;
+        this.receiptNo = receipt.getNo();
+        this.carNo = receipt.getCarNo();
+    }
+
+    /**
+     * 将订单分配给指定的停车小哥并将状态设置为“已完成”，之后该订单将处于不可抢的状态。
+     * @return 是否分配成功
+     */
+    public synchronized boolean distributeTo(int parkingBoyId){
+        if(this.isFinished)
+            return false;
+        this.isFinished = true;
+        this.parkingBoyId = parkingBoyId;
+        return true;
+    }
+
     public String getId() {
         return id;
     }
@@ -40,17 +58,10 @@ public class Order {
         return isFinished;
     }
 
-    public void setFinished(boolean finished) {
-        isFinished = finished;
-    }
-
     public Integer getParkingBoyId() {
         return parkingBoyId;
     }
 
-    public void setParkingBoyId(Integer parkingBoyId) {
-        this.parkingBoyId = parkingBoyId;
-    }
 
     public Integer getParkingLotId() {
         return parkingLotId;
@@ -59,4 +70,5 @@ public class Order {
     public void setParkingLotId(Integer parkingLotId) {
         this.parkingLotId = parkingLotId;
     }
+
 }
