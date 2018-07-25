@@ -1,7 +1,7 @@
 package com.oocl.parkingLotApiPractice.service.impl;
 
 import com.oocl.parkingLotApiPractice.entity.ParkingLot;
-import com.oocl.parkingLotApiPractice.service.ParkingLotService;
+import com.oocl.parkingLotApiPractice.service.ParkingLotManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
  * @date 2018-07-25 14:28
  */
 @Service
-public class ParkingLotServiceImpl implements ParkingLotService {
+public class ParkingLotManagementServiceImpl implements ParkingLotManagementService {
     private List<ParkingLot> allParkingLots;
 
     @Autowired
-    public ParkingLotServiceImpl(List<ParkingLot> allParkingLots) {
+    public ParkingLotManagementServiceImpl(List<ParkingLot> allParkingLots) {
         this.allParkingLots = allParkingLots;
     }
 

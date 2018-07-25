@@ -14,8 +14,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @author Dylan Wei
  * @date 2018-07-25 14:29
  */
-class ParkingLotServiceImplTest {
-    private ParkingLotServiceImpl parkingLotService;
+class ParkingLotManagementServiceImplTest {
+    private ParkingLotManagementServiceImpl parkingLotService;
 
     private List<ParkingLot> allParkingLots;
 
@@ -27,7 +27,7 @@ class ParkingLotServiceImplTest {
         allParkingLots.add(new ParkingLot(3, 40, 38, 2));
         allParkingLots.add(new ParkingLot(4, 50, 23, 2));
         allParkingLots.add(new ParkingLot(5, 20, 8, 2));
-        this.parkingLotService = new ParkingLotServiceImpl(allParkingLots);
+        this.parkingLotService = new ParkingLotManagementServiceImpl(allParkingLots);
     }
 
     @Test

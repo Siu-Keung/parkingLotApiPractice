@@ -8,7 +8,7 @@ import java.util.List;
  * @author Dylan Wei
  * @date 2018-07-25 14:27
  */
-public interface ParkingLotService {
+public interface ParkingLotManagementService {
 
     Boolean addParkingLot(ParkingLot parkingLot);
 

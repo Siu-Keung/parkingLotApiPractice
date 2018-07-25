@@ -4,7 +4,7 @@ import com.oocl.parkingLotApiPractice.entity.ParkingBoy;
 import com.oocl.parkingLotApiPractice.entity.ParkingLot;
 import com.oocl.parkingLotApiPractice.model.ParkingBoyModel;
 import com.oocl.parkingLotApiPractice.service.ParkingBoyService;
-import com.oocl.parkingLotApiPractice.service.ParkingLotService;
+import com.oocl.parkingLotApiPractice.service.ParkingLotManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +20,7 @@ public class ParkingBoyController {
     @Autowired
     private ParkingBoyService parkingBoyService;
     @Autowired
-    private ParkingLotService parkingLotService;
+    private ParkingLotManagementService parkingLotService;
 
     @PostMapping
     public String addParkingBoy(ParkingBoy parkingBoy){

@@ -3,7 +3,7 @@ package com.oocl.parkingLotApiPractice.service.impl;
 import com.oocl.parkingLotApiPractice.entity.ParkingBoy;
 import com.oocl.parkingLotApiPractice.model.ParkingBoyModel;
 import com.oocl.parkingLotApiPractice.service.ParkingBoyService;
-import com.oocl.parkingLotApiPractice.service.ParkingLotService;
+import com.oocl.parkingLotApiPractice.service.ParkingLotManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ParkingBoyServiceImpl implements ParkingBoyService {
     @Autowired
-    private ParkingLotService parkingLotService;
+    private ParkingLotManagementService parkingLotService;
     private List<ParkingBoy> allParkingBoys;
 
     @Autowired

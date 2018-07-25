@@ -1,7 +1,7 @@
 package com.oocl.parkingLotApiPractice.controller;
 
 import com.oocl.parkingLotApiPractice.entity.ParkingLot;
-import com.oocl.parkingLotApiPractice.service.ParkingLotService;
+import com.oocl.parkingLotApiPractice.service.ParkingLotManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/parkingLots")
 public class ParkingLotController {
     @Autowired
-    private ParkingLotService parkingLotService;
+    private ParkingLotManagementService parkingLotService;
 
     @PostMapping
     public String addParkingLot(ParkingLot parkingLot){

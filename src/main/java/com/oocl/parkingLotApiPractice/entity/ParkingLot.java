@@ -33,7 +33,8 @@ public class ParkingLot {
     }
 
     public void setAvailableNum(Integer availableNum) {
-        this.availableNum = availableNum;
+        if (availableNum <= this.totalNum)
+            this.availableNum = availableNum;
     }
 
     public Integer getParkingBoyId() {
