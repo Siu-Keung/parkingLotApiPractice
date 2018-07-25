@@ -3,6 +3,7 @@ package com.oocl.parkingLotApiPractice.service.impl;
 import com.oocl.parkingLotApiPractice.entity.ParkingBoy;
 import com.oocl.parkingLotApiPractice.service.ParkingBoyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @author Dylan Wei
  * @date 2018-07-25 14:14
  */
+@Service
 public class ParkingBoyServiceImpl implements ParkingBoyService {
     private List<ParkingBoy> allParkingBoys;
 

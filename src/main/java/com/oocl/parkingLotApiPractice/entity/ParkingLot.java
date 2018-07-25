@@ -1,5 +1,7 @@
 package com.oocl.parkingLotApiPractice.entity;
 
+import java.util.Objects;
+
 /**
  * @author Dylan Wei
  * @date 2018-07-25 14:00
@@ -42,6 +44,17 @@ public class ParkingLot {
         this.parkingBoyId = parkingBoyId;
     }
 
+    public ParkingLot(Integer id, Integer totalNum, Integer availableNum) {
+        this.id = id;
+        this.totalNum = totalNum;
+        this.availableNum = availableNum;
+    }
+
+    public ParkingLot(Integer id) {
+
+        this.id = id;
+    }
+
     public ParkingLot(Integer id, Integer totalNum, Integer availableNum, Integer parkingBoyId) {
 
         this.id = id;
@@ -51,5 +64,19 @@ public class ParkingLot {
     }
 
     public ParkingLot() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ParkingLot)) return false;
+        ParkingLot that = (ParkingLot) o;
+        return Objects.equals(getId(), that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getId());
     }
 }
