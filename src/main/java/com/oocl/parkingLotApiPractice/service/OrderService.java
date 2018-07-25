@@ -15,6 +15,8 @@ public interface OrderService {
 
     List<Order> getUnfinishedOrders();
 
+    List<Order> getAllOrders();
+
     boolean seckillOrder(int parkingBoyId, String orderId);
 
 

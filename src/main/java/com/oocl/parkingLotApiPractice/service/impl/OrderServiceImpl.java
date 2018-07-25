@@ -25,6 +25,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Order> getAllOrders() {
+        return this.allOrders.stream().collect(Collectors.toList());
+    }
+
+    @Override
     public Order createOrder(Receipt receipt) {
         Order order = new Order(UUID.randomUUID().toString(), receipt);
         this.allOrders.add(order);

@@ -3,6 +3,7 @@ package com.oocl.parkingLotApiPractice;
 import com.oocl.parkingLotApiPractice.entity.Order;
 import com.oocl.parkingLotApiPractice.entity.ParkingBoy;
 import com.oocl.parkingLotApiPractice.entity.ParkingLot;
+import com.oocl.parkingLotApiPractice.entity.Receipt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -40,6 +41,9 @@ public class ParkingLotApiPracticeApplication {
     @Bean
     public List<Order> allOrders(){
 	    List<Order> allOrders = new ArrayList<>();
+	    allOrders.add(new Order("1", new Receipt("1", "粤c952")));
+	    allOrders.add(new Order("2", new Receipt("2", "粤c222")));
+	    allOrders.add(new Order("3", new Receipt("3", "粤c153")));
 	    return allOrders;
     }
 
