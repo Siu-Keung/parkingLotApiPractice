@@ -12,7 +12,11 @@ public interface ParkingLotManagementService {
 
     Boolean addParkingLot(ParkingLot parkingLot);
 
+    Boolean removeParkingLot(Integer parkingLotId);
+
     ParkingLot updateParkingLot(ParkingLot newParkingLot);
+
+    ParkingLot getParkingLotById(Integer parkingLotId);
 
     List<ParkingLot> getAllParkingLots();
 

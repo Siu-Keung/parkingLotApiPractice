@@ -34,7 +34,7 @@ public class ParkingLotApiPracticeApplication {
 	    allParkingLots.add(new ParkingLot(2, 100, 18, 1));
 	    allParkingLots.add(new ParkingLot(3, 40, 38, 2));
 	    allParkingLots.add(new ParkingLot(4, 50, 23, 2));
-	    allParkingLots.add(new ParkingLot(5, 20, 8, 2));
+	    allParkingLots.add(new ParkingLot(5, 20, 20, 2));
 	    return allParkingLots;
     }
 

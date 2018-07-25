@@ -3,10 +3,7 @@ package com.oocl.parkingLotApiPractice.controller;
 import com.oocl.parkingLotApiPractice.entity.ParkingLot;
 import com.oocl.parkingLotApiPractice.service.ParkingLotManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,12 +12,11 @@ import java.util.List;
  * @date 2018-07-25 14:52
  */
 @RestController
-@RequestMapping("/parkingLots")
 public class ParkingLotController {
     @Autowired
     private ParkingLotManagementService parkingLotService;
 
-    @PostMapping
+    @PostMapping("/parkingLots")
     public String addParkingLot(ParkingLot parkingLot){
         if(this.parkingLotService.addParkingLot(parkingLot))
             return "succeeded";
@@ -28,9 +24,22 @@ public class ParkingLotController {
             return "failed";
     }
 
-    @GetMapping
+    @DeleteMapping("/parkingLots/{parkingLotId}")
+    public String deleteParkingLot(@PathVariable Integer parkingLotId){
+        if(this.parkingLotService.removeParkingLot(parkingLotId))
+            return "succeeded";
+        else
+            return "failed";
+    }
+
+    @GetMapping("/parkingLots")
     public List<ParkingLot> getAllParkingLots(){
         return this.parkingLotService.getAllParkingLots();
+    }
+
+    @GetMapping("/parkingLots/{parkingLotId}")
+    public ParkingLot getParkingLotById(@PathVariable Integer parkingLotId){
+        return  this.parkingLotService.getParkingLotById(parkingLotId);
     }
 
 

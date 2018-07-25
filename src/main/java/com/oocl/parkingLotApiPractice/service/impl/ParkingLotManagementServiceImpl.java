@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -48,6 +49,26 @@ public class ParkingLotManagementServiceImpl implements ParkingLotManagementServ
         return this.allParkingLots.stream()
                 .filter(item -> item.getParkingBoyId().equals(parkingBoyId))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ParkingLot getParkingLotById(Integer parkingLotId) {
+        return this.allParkingLots.stream()
+                .filter(item -> item.getId().equals(parkingLotId))
+                .findFirst().get();
+    }
+
+    @Override
+    public Boolean removeParkingLot(Integer parkingLotId) {
+        Optional<ParkingLot> optional = this.allParkingLots.stream()
+                .filter(item -> item.getId().equals(parkingLotId))
+                .findFirst();
+        if(!optional.isPresent())
+            return false;
+        ParkingLot parkingLot = optional.get();
+        if(parkingLot.getAvailableNum() != parkingLot.getTotalNum())
+            return false;
+        return this.allParkingLots.remove(parkingLot);
     }
 
     @Override
