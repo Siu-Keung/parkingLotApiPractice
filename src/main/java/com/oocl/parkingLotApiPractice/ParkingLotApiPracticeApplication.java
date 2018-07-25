@@ -9,4 +9,7 @@ public class ParkingLotApiPracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ParkingLotApiPracticeApplication.class, args);
 	}
+
+
+
 }
