@@ -51,7 +51,6 @@ public class OrderServiceImpl implements OrderService {
         if(!result.isPresent())
             return false;
         Order order = result.get();
-        order.distributeTo(parkingBoyId);
-        return true;
+        return order.distributeTo(parkingBoyId);
     }
 }

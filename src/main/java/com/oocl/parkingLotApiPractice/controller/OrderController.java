@@ -3,9 +3,7 @@ package com.oocl.parkingLotApiPractice.controller;
 import com.oocl.parkingLotApiPractice.entity.Order;
 import com.oocl.parkingLotApiPractice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,8 +25,13 @@ public class OrderController {
             return orderService.getAllOrders();
     }
 
-
-
+    @PatchMapping("/orders/{orderId}")
+    public String seckillOrder(@PathVariable String orderId, Integer parkingBoyId){
+        if(this.orderService.seckillOrder(parkingBoyId, orderId))
+            return "succeeded";
+        else
+            return "failed";
+    }
 
 
 }
