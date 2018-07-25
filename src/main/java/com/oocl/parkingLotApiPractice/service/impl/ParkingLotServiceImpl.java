@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Dylan Wei
@@ -40,5 +41,12 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         if(newParkingLot.getParkingBoyId() != null)
             targetParkingLot.setParkingBoyId(newParkingLot.getParkingBoyId());
         return targetParkingLot;
+    }
+
+    @Override
+    public List<ParkingLot> getParkingLotsByParkingBoyId(Integer parkingBoyId) {
+        return this.allParkingLots.stream()
+                .filter(item -> item.getParkingBoyId().equals(parkingBoyId))
+                .collect(Collectors.toList());
     }
 }

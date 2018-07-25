@@ -22,6 +22,12 @@ public class ParkingBoyModel extends ParkingBoy {
         this.parkingLots = parkingLots;
     }
 
+    public ParkingBoyModel(ParkingBoy parkingBoy) {
+        super(parkingBoy.getId());
+    }
+
+
+
     public List<ParkingLot> getParkingLots() {
         return parkingLots;
     }
