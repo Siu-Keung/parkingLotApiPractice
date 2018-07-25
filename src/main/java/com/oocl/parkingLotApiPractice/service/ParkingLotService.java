@@ -10,4 +10,6 @@ public interface ParkingLotService {
 
     Boolean addParkingLot(ParkingLot parkingLot);
 
+    ParkingLot updateParkingLot(ParkingLot newParkingLot);
+
 }

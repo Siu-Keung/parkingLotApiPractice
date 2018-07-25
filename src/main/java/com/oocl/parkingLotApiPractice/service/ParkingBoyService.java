@@ -10,5 +10,4 @@ public interface ParkingBoyService {
 
     Boolean addParkingBoy(ParkingBoy parkingBoy);
 
-
 }

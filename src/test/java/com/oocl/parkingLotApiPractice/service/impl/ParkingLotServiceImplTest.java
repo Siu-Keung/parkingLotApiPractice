@@ -49,4 +49,14 @@ class ParkingLotServiceImplTest {
         assertThat(succeeded, is(false));
         assertThat(this.allParkingLots.size(), is(5));
     }
+
+
+    @Test
+    void should_update_successfully(){
+        ParkingLot newParkingLot = new ParkingLot(1, 10, 8, 2);
+
+        ParkingLot resultParkingLot = this.parkingLotService.updateParkingLot(newParkingLot);
+
+        assertThat(resultParkingLot.getParkingBoyId(), is(2));
+    }
 }

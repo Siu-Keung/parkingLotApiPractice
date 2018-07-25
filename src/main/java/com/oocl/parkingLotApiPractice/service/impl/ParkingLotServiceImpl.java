@@ -26,4 +26,19 @@ public class ParkingLotServiceImpl implements ParkingLotService {
             return false;
         return this.allParkingLots.add(parkingLot);
     }
+
+    @Override
+    public ParkingLot updateParkingLot(ParkingLot newParkingLot) {
+        int index = this.allParkingLots.indexOf(newParkingLot);
+        if(index == -1)
+            return  null;
+        ParkingLot targetParkingLot = this.allParkingLots.get(index);
+        if(newParkingLot.getTotalNum() != null)
+            targetParkingLot.setTotalNum(newParkingLot.getTotalNum());
+        if(newParkingLot.getAvailableNum() != null)
+            targetParkingLot.setAvailableNum(newParkingLot.getAvailableNum());
+        if(newParkingLot.getParkingBoyId() != null)
+            targetParkingLot.setParkingBoyId(newParkingLot.getParkingBoyId());
+        return targetParkingLot;
+    }
 }
