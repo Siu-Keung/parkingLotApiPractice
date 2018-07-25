@@ -30,7 +30,7 @@ public class ParkingBoyController {
             return "failed";
     }
 
-    @PostMapping("/{parkingBoyId}/parkingLots")
+    @PatchMapping("/{parkingBoyId}/parkingLots")
     public String addParkingLotForParkingBoy(
             @PathVariable Integer parkingBoyId, Integer parkingLotId){
         ParkingLot parkingLot = new ParkingLot(parkingLotId);
