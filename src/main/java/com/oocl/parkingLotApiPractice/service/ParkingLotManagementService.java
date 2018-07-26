@@ -14,8 +14,6 @@ public interface ParkingLotManagementService {
 
     Boolean removeParkingLot(Integer parkingLotId);
 
-    ParkingLot updateParkingLot(ParkingLot newParkingLot);
-
     ParkingLot getParkingLotById(Integer parkingLotId);
 
     List<ParkingLot> getAllParkingLots();
@@ -23,5 +21,7 @@ public interface ParkingLotManagementService {
     List<ParkingLot> getParkingLotsByParkingBoyId(Integer parkingBoyId);
 
     Boolean setInventory(Integer parkingLotId, Integer newInventory);
+
+    ParkingLot updateParkingLot(Integer parkingLotId, ParkingLot parkingLot);
 
 }

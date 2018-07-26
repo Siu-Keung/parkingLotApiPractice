@@ -5,6 +5,7 @@ import com.oocl.parkingLotApiPractice.service.ParkingLotManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -43,13 +44,13 @@ public class ParkingLotController {
     }
 
     @PatchMapping("/parkingLots/{parkingLotId}")
-    public String setParkingLotInventory(
-            @PathVariable Integer parkingLotId, Integer newInventory
+    public ParkingLot updateParkinigLot(
+            @PathVariable Integer parkingLotId, ParkingLot parkingLot, HttpServletResponse response
     ){
-        if(this.parkingLotService.setInventory(parkingLotId, newInventory))
-            return "succeeded";
-        else
-            return "failed";
+        ParkingLot resultParkingLot = this.parkingLotService.updateParkingLot(parkingLotId, parkingLot);
+        if(resultParkingLot == null)
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        return resultParkingLot;
     }
 
 

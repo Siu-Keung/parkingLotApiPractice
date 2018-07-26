@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "33a9e379-b8b5-4273-bf6a-870c3f5bd219",
+			"_postman_id": "990b94d2-22aa-4029-bced-58d2599e0587",
 			"name": "127.0.0.1:8080/parkingBoys",
 			"event": [
 				{
@@ -88,7 +88,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "dae8f6a1-be40-44bf-bd4c-70e7661a60bc",
+			"_postman_id": "73f263c8-a5e7-4e57-b190-6568e0649051",
 			"name": "127.0.0.1:8080/parkingBoys",
 			"event": [
 				{
@@ -140,7 +140,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b58e06a4-daa4-4949-a2cd-588d09a1d2c5",
+			"_postman_id": "0376ca86-d502-4763-a97d-bc10793818aa",
 			"name": "127.0.0.1:8080/parkingLots",
 			"event": [
 				{
@@ -212,7 +212,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "180527dd-53b0-429d-9f5f-7f9920cdad83",
+			"_postman_id": "a8f521bd-cc0c-4469-8a5a-796fe3610ad3",
 			"name": "127.0.0.1:8080/parkingBoys/1/parkingLots/3",
 			"event": [
 				{
@@ -257,7 +257,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "af946232-0ac6-4bf4-9606-62fbd7b9ccab",
+			"_postman_id": "a9b82533-1476-41c5-a674-58409edf1662",
 			"name": "127.0.0.1:8080/orders",
 			"event": [
 				{
@@ -329,7 +329,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fec97ffb-cfee-4002-a303-aad73f636c87",
+			"_postman_id": "02108f8b-7dbc-4881-a49b-d46833fdb475",
 			"name": "127.0.0.1:8080/orders/1",
 			"event": [
 				{
@@ -382,7 +382,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "aede288e-985f-4ab7-a384-82a22949451e",
+			"_postman_id": "4fcabf74-1e52-46bb-9609-b8ed000e6345",
 			"name": "127.0.0.1:8080/receipts",
 			"event": [
 				{
@@ -434,7 +434,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e2547650-004b-46aa-a916-43ffab54db35",
+			"_postman_id": "94dd18ea-3cdb-4b0a-a789-b3f41ae4a008",
 			"name": "127.0.0.1:8080/parkingLots/2",
 			"event": [
 				{
@@ -479,7 +479,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b0fd5071-ca7d-4cb7-a4a1-9a296e995b0f",
+			"_postman_id": "553a1690-fde4-452a-b0ef-8050433623d6",
 			"name": "127.0.0.1:8080/parkingLots/5",
 			"event": [
 				{
@@ -524,7 +524,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9279a048-7c20-4d54-8d06-d7d338e7c143",
+			"_postman_id": "ed4b5bc8-9ebe-4d97-839c-5c4ef79bea6a",
 			"name": "127.0.0.1:8080/parkingLots",
 			"event": [
 				{
@@ -590,7 +590,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "36ed4e51-7ddb-429f-8854-180404071671",
+			"_postman_id": "d817d1f7-c4b4-41d0-81b3-bdbe8b274296",
 			"name": "127.0.0.1:8080/parkingBoys/1/parkingLots",
 			"event": [
 				{
@@ -650,18 +650,28 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a83822ad-2947-41e0-ae91-4ec872f3f88c",
+			"_postman_id": "e5e0bf3c-3d7e-425f-8675-d281d74a0180",
 			"name": "127.0.0.1:8080/parkingLots/5",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "b50faa73-f1a8-4b90-a03b-c532c82287c5",
+						"id": "e7888ace-b228-4be2-9160-4fcc806b581d",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"\", () => {",
+							"pm.test(\"should update parking lot\", () => {",
 							"",
-							"pm.expect(pm.response.text()).to.eql(\"succeeded\")",
+							"pm.expect(pm.response.json()).to.eql(",
+							"    ",
+							"    {",
+							"    \"id\": 4,",
+							"    \"totalNum\": 50,",
+							"    \"availableNum\": 23,",
+							"    \"parkingBoyId\": 2",
+							"}",
+							"    ",
+							"    ",
+							"    )",
 							"",
 							"});"
 						]
@@ -680,9 +690,21 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "newInventory",
-							"value": "15",
+							"key": "totalNum",
+							"value": "50",
 							"sessionValue": "15",
+							"type": "text"
+						},
+						{
+							"key": "parkingBoyId",
+							"value": "2",
+							"sessionValue": "2",
+							"type": "text"
+						},
+						{
+							"key": "availableNum",
+							"value": "23",
+							"sessionValue": "23",
 							"type": "text"
 						}
 					]

@@ -30,21 +30,6 @@ public class ParkingLotManagementServiceImpl implements ParkingLotManagementServ
     }
 
     @Override
-    public ParkingLot updateParkingLot(ParkingLot newParkingLot) {
-        int index = this.allParkingLots.indexOf(newParkingLot);
-        if(index == -1)
-            return  null;
-        ParkingLot targetParkingLot = this.allParkingLots.get(index);
-        if(newParkingLot.getTotalNum() != null)
-            targetParkingLot.setTotalNum(newParkingLot.getTotalNum());
-        if(newParkingLot.getAvailableNum() != null)
-            targetParkingLot.setAvailableNum(newParkingLot.getAvailableNum());
-        if(newParkingLot.getParkingBoyId() != null)
-            targetParkingLot.setParkingBoyId(newParkingLot.getParkingBoyId());
-        return targetParkingLot;
-    }
-
-    @Override
     public List<ParkingLot> getParkingLotsByParkingBoyId(Integer parkingBoyId) {
         return this.allParkingLots.stream()
                 .filter(item -> parkingBoyId.equals(item.getParkingBoyId()))
@@ -88,5 +73,21 @@ public class ParkingLotManagementServiceImpl implements ParkingLotManagementServ
             return false;
         parkingLot.setAvailableNum(newInventory);
         return true;
+    }
+
+    @Override
+    public ParkingLot updateParkingLot(Integer parkingLotId, ParkingLot parkingLot) {
+        Optional<ParkingLot> optional = this.allParkingLots.stream()
+                .filter(item -> parkingLotId.equals(item.getId())).findFirst();
+        if(!optional.isPresent())
+            return null;
+        ParkingLot targetParkingLot = optional.get();
+        if(parkingLot.getTotalNum() != null)
+            targetParkingLot.setTotalNum(parkingLot.getTotalNum());
+        if(parkingLot.getAvailableNum() != null)
+            targetParkingLot.setAvailableNum(parkingLot.getAvailableNum());
+        if(parkingLot.getParkingBoyId() != null)
+            targetParkingLot.setParkingBoyId(parkingLot.getParkingBoyId());
+        return targetParkingLot;
     }
 }

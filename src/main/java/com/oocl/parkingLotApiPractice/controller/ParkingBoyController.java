@@ -39,7 +39,7 @@ public class ParkingBoyController {
             @PathVariable Integer parkingBoyId, @PathVariable Integer parkingLotId){
         ParkingLot parkingLot = new ParkingLot(parkingLotId);
         parkingLot.setParkingBoyId(parkingBoyId);
-        if(this.parkingLotService.updateParkingLot(parkingLot) != null)
+        if(this.parkingLotService.updateParkingLot(parkingLot.getId(), parkingLot) != null)
             return "succeeded";
         else
             return "failed";
